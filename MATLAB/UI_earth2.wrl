@@ -1,0 +1,68 @@
+#VRML V2.0 utf8
+# Created with V-Realm Builder v2.0 
+# Integrated Data Systems Inc. 
+# www.ids-net.com 
+
+DEF ground_earth Transform {
+  scale 100 100 20
+  rotation 1 0 0 -1.5708
+  children DEF Plane_Square Transform {
+    children DEF plane Transform {
+      rotation 0 1 0 0
+      children Shape {
+        appearance Appearance {
+          texture ImageTexture {
+            url "20203.png" 
+          }
+          material Material {
+            diffuseColor 1 1 1
+          }
+        }
+        geometry IndexedFaceSet {
+          solid FALSE
+          normalIndex [
+            0, 0, 0, 0, -1 
+          ]
+          coordIndex [
+            0, 1, 2, 3, -1 
+          ]
+          normal Normal {
+            vector 0 0 1
+          }
+          coord DEF Plane_Square_IFS_Coord Coordinate {
+            point [
+              -10.0781 10.0781 0,
+              -10.0781 -10.078 0,
+              10.0781 -10.078 0,
+              10.0781 10.0781 0 
+            ]
+          }
+        }
+      }
+    }
+  }
+}
+Background {
+  skyColor [
+    0 0.2 0.7,
+    0 0.5 0.7,
+    0 0.5 1,
+    0 1 1 
+  ]
+  skyAngle [0.9, 1.5, 1.57]
+  groundColor [
+    0.120948 0.111678 0.7,
+    0.215381 0.0622425 0.7,
+    0.0965036 0.0922272 0.7,
+    0 0.02 0.9 
+  ]
+  groundAngle [0.8, 1.4, 1.57]
+}
+DEF zero Viewpoint {
+  description "zero"
+  position 3 15 25
+  orientation -1 0 0 0
+}
+DirectionalLight {
+  direction 0 -10 -1
+}
